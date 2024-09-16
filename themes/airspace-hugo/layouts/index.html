@@ -1,0 +1,150 @@
+{{ define "main" }}
+
+
+
+{{$data := index .Site.Data .Site.Language.Lang }}
+
+<!-- TITRE PAGE -->
+{{ with .Params.banner }}
+<section id="{{.Kind}}" class="home-banner page-title p-md-0 p-sm-5 " style="background-image:url('{{.bg_image}}');">
+  <div class="container banner-home-container d-flex align-items-center min-vh-100">
+    <div class="row ">
+      <div class="col-md-8">
+        <div class="page-title-title">
+          <h1 class="small text-uppercase">{{ .title }}</h1>
+          <p>{{ .Description }}</p>
+        </div>
+        <div class="page-title-continuer mt-5">
+          <a class="link link-underline-primary" href="#2">
+            <i class="icon ion-arrow-down-c"></i> {{.link_label}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- FIN TITRE PAGE -->
+
+
+<!-- Service -->
+<section id="2" class="section home">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-6  section-title d-flex align-items-center">
+        <h2 class="mt-5 pl-md-4">{{.Params.Services.services_title | markdownify }}</h2>
+      </div>
+      {{ range sort (where .Site.RegularPages "Section" "expertises") "Weight" }}
+      {{ partial "partial_expertises_list.html" . }}
+
+      {{ end }}
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-10 offset-md-1 text-center">
+        <h2 class="mb-5">{{ .Params.honoraires.honoraires_title | markdownify }}</h2>
+        <p>{{ .Params.honoraires.honoraires_text | markdownify }}</p>
+        <a class="mt-3 link link-underline-primary " href="/offre">
+          {{ .Params.honoraires.honoraires_link | markdownify }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /service -->
+
+
+
+<!-- about -->
+{{ if .Params.about.enable }}
+{{ with .Params.about }}
+<section class="section">
+  <div class="container-fluid">
+      <div class="home-about offset-md-1 p-5">
+        <div class="row">
+          <div class="col-lg-5 featured-container p-md-4 bg-white mr-md-5 text-center">
+              {{ $thumb1 := resources.Get .about_image  -}}
+              {{ $image1 := $thumb1.Resize "650x" }}
+            <img alt="Maître Isabelle Filipetti" class="img-fluid" src="{{ $image1.Permalink}}">
+          </div>
+
+          <div class="col-lg-4 mt-5 section-title">
+            <h2 class="mb-5">{{.about_title | markdownify }}</h2>
+            <div class="text-justify">
+              {{.about_content | markdownify }}
+              <a class="mt-3 link link-underline-primary "
+                  href='{{ with $.Site.GetPage "cabinet" }}{{ .Permalink }}{{ end }}'>
+                  {{ .about_link }}</a>
+            </div>
+          </div>
+        </div><!--row-->
+      </div><!--home about-->
+</div><!--Container-->
+</section>
+{{ end }}
+{{ end }}
+<!-- /about -->
+
+
+<section class="testimonial section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 text-center">
+        <h2 class="mb-5">{{.Params.temoignages.temoignages_titre | markdownify}}</h2>
+        {{ range  where .Pages "Section" "temoignages"}}
+
+        {{ partial "partial_temoignages_carousel.html" . }}
+
+      </div>
+      {{ end }}
+    </div>
+    <div class="row">
+
+      <div class="col-md-8 offset-md-2 text-center">
+        <p class="mt-5 text-center" style="font-size: 28px">
+          " <em>{{.Params.temoignages.temoignages_texte | markdownify}} </em>"
+          </p>
+          <div class="col-md-3 offset-md-9 mt-4">
+              {{ $thumb := resources.Get "/images/signature.png" -}}
+              {{ $image := $thumb.Resize "150x" }}
+              <!-- <img alt="Signature Isabelle Filipetti" class="img-fluid" src="{{ $image.Permalink}}"> -->
+            <img alt="Signature Isabelle Filipetti" class="img-fluid" src="{{ $image.Permalink}}">
+          </div>
+      </div>
+
+      <div class="col-md-12 mt-5 text-center">
+      <a class="mt-3 link link-underline-primary " href="/temoignages">
+            {{.Params.temoignages.temoignages_lien | markdownify}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- blog Start -->
+<section class="section">
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="col-md-3 offset-1 section-title">
+        <h2 class="mt-5">{{ .Params.blog.blog_section_title}}</h2>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          {{ range first 4 (where .Site.Pages "Type" "post").ByDate.Reverse  }}
+          <div class="col-md-10 offset-md-1">
+            <div class="post shadow">
+              <h3 class="post-title"><a href="{{ .Permalink }}"><i class="icon ion-chevron-right"></i>
+                  {{ .Title }}</a></h3>
+              <div class="post-content">
+                <p>{{ .Summary | truncate 122}}</p>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div><!--Row-->
+    </div><!--Container-->
+</section>
+<!-- blog End -->
+
+{{ end }}

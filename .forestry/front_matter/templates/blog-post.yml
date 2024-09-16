@@ -1,0 +1,39 @@
+---
+label: Blog post
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+  config:
+    date_format: DD/MM/YYYY
+- type: textarea
+  name: description
+  label: description
+  description: Utilisée pour le résumé et le SEO
+- type: text
+  name: type
+  label: type
+  hidden: false
+  default: post
+- type: list
+  name: tags
+  label: tags
+- type: list
+  name: categories
+  label: categories
+- type: list
+  name: aliases
+  label: aliases
+pages:
+- content/french/blog/20110331-conference-droit-a-image.md
+- content/french/blog/20130129-Sensibilisation juridique autour des réseaux sociaux.md
+- content/french/blog/20171228-proprieteintellectuelle.md
+- content/french/blog/20180216-startup-weekend.md
+- content/french/blog/20180328-startup-weekend-2.md
+- content/french/blog/20200318-covid19.md
+- content/french/blog/belle-annee-2021.md
+- content/french/blog/de-grands-changements-pour-2022.md

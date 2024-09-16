@@ -1,0 +1,87 @@
+--- 
+about: 
+  button: 
+    enable: false
+    label: ""
+    link: "#"
+  content: "Isabelle FILIPETTI a prêté serment à Paris en 2004 et a été une collaboratrice engagée au sein de cabinets parisiens et niçois renommés.
+  En 2010, elle crée son cabinet en s’entourant d’une équipe dynamique partageant son niveau d’exigence."
+  enable: true
+  image: images/company/about.jpg
+
+collaborateurs: 
+  - 
+    bio: "Isabelle FILIPETTI est avocat au Barreau de Grasse (06). Titulaire d’une maîtrise en droit privé et d’un DESS de droit de Propriété Intellectuelle et du multimédia de l’université Panthéon-Assas (Paris II), elle a prêté serment à Paris en 2004 et a été une collaboratrice engagée au sein de cabinets parisiens et niçois renommés."
+    nom: "Isabelle FILIPETTI"
+    photo: /images/teams/avocat-isabelle-filipetti.jpg
+    titre: " Avocat – Fondateur"
+  - 
+    bio: ""
+    nom: "Marie BORELLO"
+    photo: "/images/teams/vanessa-photo-300x225.jpg"
+    titre: "Avocat Collaboratrice"
+  - 
+    bio: ""
+    nom: "Camille CHARLES"
+    photo: "/images/teams/team-1.jpg"
+    titre: "Juriste Collaboratrice"
+  - 
+    bio: ""
+    nom: "Ashkhen AYVAZYAN"
+    photo: "/images/teams/team-2.jpg"
+    titre: "Juriste stagiaire"
+  - 
+    bio: ""
+    nom: "Guillaume LACOSTE"
+    photo: ""
+    titre: "Juriste stagiaire"
+  - 
+    bio: "Le Cabinet travaille en synergie avec NH Avocats afin de vous apporter une réelle expertise en droits des affaires et en étroite collaboration avec d’autres cabinets d’avocats sis notamment à Paris, Lyon et Marseille."
+    nom: "NH Avocats "
+    photo: "/images/teams/nh-avocats.jpg"
+    titre: Partenaire
+cta: 
+  enable: true
+valeurs: 
+  description: "Toute l’équipe se tient prête pour vous accompagner dans une relation de confiance durable et de disponibilité permanente…"
+  enable: true
+  title: "Nos valeurs, nos engagements"
+  valeur_item: 
+    - 
+      content: tagline
+      icon: ion-coffee
+      name: Disponibilité
+    - 
+      content: tagline.
+      icon: ion-compass
+      name: Réactivité
+    - 
+      content: tagline
+      icon: ion-image
+      name: Loyauté
+    - 
+      content: tagline
+      icon: ion-bug
+      name: Transparence
+    - 
+      content: tagline
+      icon: ion-bug
+      name: "Bonne humeur"
+    - 
+      content: tagline
+      icon: ion-bug
+      name: "Ecoute et empathie"
+    - 
+      content: tagline
+      icon: ion-bug
+      name: "Pragmatisme et créativité"
+    - 
+      content: tagline
+      icon: ion-bug
+      name: Rigueur
+
+honoraires:
+  enable: true
+  title: Honoraires
+  content: "Le Cabinet pratique un taux horaire de 250 Euros HT. Le rendez-vous est payant (150 Euros HT) et déduit des futurs honoraires.
+  <br>Dans la majorité des cas, nous proposons un forfait par dossier permettant de globaliser les honoraires suivant la complicité de l’accompagnement et/ou du contentieux. Il est possible de le lisser en plusieurs échéances."

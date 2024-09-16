@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+
+{{ partial "page-title.html" . }}
+
+
+<section class="section-sm">
+	  <div class="container">
+		<div class="row">
+			<div class="col-md-6  section-title">
+				<p>{{ .Content | markdownify }}</p>
+			  </div>
+		{{ range .Pages }}
+		{{ partial "partial_expertises_list.html" . }}
+
+				  {{ end }}
+
+    </div>
+  </div>
+</section>
+
+{{ end }}

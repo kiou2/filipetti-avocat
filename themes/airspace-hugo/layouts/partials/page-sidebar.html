@@ -1,0 +1,16 @@
+{{ $url:= .Permalink}}
+<aside class="sidebar " >
+  <!-- Widget Latest Posts -->
+    <!-- <h4 class="widget-title">{{with .CurrentSection}}{{ .Title }}{{end}}</h4> -->
+    {{  with .CurrentSection  }}
+    <ul class="nav nav-tabs flex-column flex-sm-row">
+    {{ range .Pages.ByWeight }}
+<li class="nav-item text-uppercase mx-1 small">
+<a class="flex-sm-fill text-sm-center nav-link {{if eq $url .Permalink}}active{{end}}" href="{{ .Permalink }}">{{if .Params.h3}}{{ .Params.h3 }}{{else}}{{.Title}}{{end}}</a>  </li>
+    {{ end }}
+
+  </ul>
+    {{ end }}
+  <!-- End Latest Posts -->
+
+</aside>

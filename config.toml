@@ -1,0 +1,93 @@
+baseURL =  "https://filipetti-avocat.com/" 
+#"https://peaceful-bhabha-787d37.netlify.com/"
+removePathAccents = true
+defaultContentLanguage = "fr"
+disableLanguages = "en"
+disqusShortname = ""
+paginate = "4"
+summaryLength = "30"
+theme = "airspace-hugo"
+title = "Cabinet d'Avocats Isabelle Filipetti - AXE AVOCATS"
+[markup.goldmark.renderer]
+unsafe= true
+[Languages.en]
+contentDir = "content/english"
+copyright = "Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights Reserved"
+home = "Home"
+languageCode = "en-us"
+languageName = "En"
+weight = 2
+[Languages.fr]
+contentDir = "content/french"
+copyright = "© Isabelle Filipetti 2024."
+home = "Accueil"
+languageCode = "fr-fr"
+languageName = "Fr"
+weight = 1
+[[menu.footer]]
+URL = "contact"
+name = "Contact"
+weight = 3
+
+[[menu.main]]
+URL = "expertises"
+hasChildren = true
+name = "Expertises"
+weight = 2
+[params]
+author = "Agence Fizzbuzz"
+contact_form_action = "#"
+description = "Avocat à Saint Laurent du Var"
+email = "cab@filipetti-avocat.com"
+fax = "04 93 19 30 23"
+google_analitycs_id = "UA-4101235-3"
+location = "73 avenue Saint-Exupéry - 1er étage - 06700 Saint Laurent du Var"
+logo = "images/logo_isa_2020.png"
+mobile = "06 62 89 57 04"
+phone = "04 22 13 27 56"
+[params.gmap]
+enable = true
+gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyC6W_o_T7beozw6aphjH-JfY5wdiNxHqSM&libraries=places"
+map_latitude = "43.668096"
+map_longitude = "7.185345"
+map_marker = "images/marker.png"
+[params.nav_button]
+enable = true
+label = "Get A Quote"
+link = "contact"
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/Ionicons/css/ionicons.min.css"
+# [[params.plugins.css]]
+# link = "plugins/magnific-popup/magnific-popup.css"
+# [[params.plugins.css]]
+# link = "plugins/slick/slick.css"
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/popper.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+# [[params.plugins.js]]
+# link = "plugins/slick/slick.min.js"
+# [[params.plugins.js]]
+# link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
+[[params.plugins.js]]
+link = "plugins/shuffle/shuffle.min.js"
+[[params.plugins.js]]
+link = "plugins/google-map/gmap.js"
+[params.preloader]
+enable = false
+preloader = ""
+[params.search]
+enable = true
+[[params.social]]
+icon = "ion-social-linkedin-outline"
+link = "https://www.linkedin.com/in/isabelle-filipetti-5274b5124/"
+name = "LinkedIn"
+[taxonomies]
+# sp_competence = "tag_competence"
+# sp_ville = "tag_ville"
+categories = "categories"
+tags = "tags"

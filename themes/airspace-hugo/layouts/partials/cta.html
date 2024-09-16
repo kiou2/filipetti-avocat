@@ -1,0 +1,23 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.homepage.cta }}
+<section class="call-to-action bg-1 section-sm overly" style="background-image: url('{{ "/images/teams/bureau.jpg" | absURL }}');background-position-y: 230px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+
+        </div>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a class="btn btn-main" href="{{ .link | relLangURL }}">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
+          
+
+    </div><!--col -->
+  </div><!--row -->
+  </div><!--container -->
+</section>
+{{ end }}

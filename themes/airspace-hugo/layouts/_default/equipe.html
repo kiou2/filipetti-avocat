@@ -1,0 +1,148 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section id="1" class="about section-sm {{.Section}} ">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+{{ .Content | markdownify}}
+          </div>
+
+      </div>
+  </div>
+</section>
+
+<section id="2" class="about section-sm">
+  <div class="container">
+    <div class="row">
+        {{ with .Params.collaborateurs }}
+      {{ range sort . "ordre" "asc" }}
+      <div class="col-md-4 col-sm-6 mt-20">
+        <div class="featured-container">
+          <a href="#" class="bio hover" data-toggle="modal" data-target="#bio-{{ .nom | urlize}}" aria-expanded="true"
+            aria-controls="myModal-{{ .nom | urlize}}">
+            <div class="bio-photo-container">
+            <img class="bio-photo img-fluid"
+              src="{{ if .photo}}{{ .photo | relURL }}{{ else}}/images/teams/user.png{{ end }}">
+            </div>
+              <div class="staff-inner">
+
+              <h3 class="pt-3">{{ .nom | markdownify }}</h3>
+              <p>{{ .titre | markdownify }}</p>
+          </a>
+        </div>
+
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="bio-{{ .nom | urlize}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-slideout" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">{{ .nom }}</h4>
+              <h5>{{ .titre }}</h5>
+            </div>
+            <div class="modal-body">
+              <h5>Bio</h5>
+              {{ .bio | markdownify }}
+              <h5 class="mt-3">Devise</h5>
+              {{ .devise | markdownify }}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-small" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- modal -->
+
+
+    </div> <!-- col -->
+    {{ end }}
+    {{ end }}
+  </div> <!-- row -->
+  <div class="row">
+    <div class="col mt-5">
+
+        {{ with .Params.collaborateurs_suite }}
+        <h3>Mais pas que</h3>
+        {{ . | markdownify}}
+        {{ end }}
+
+    </div>
+</div>
+  </div> <!-- Container -->
+</section>
+
+
+
+{{ with .Params.valeurs }}
+<section id="valeurs" class="section slider overly" style="background-image: url('{{.image_section}}');background-size: cover;">
+  <div class="container">
+    <div class="row">
+      <div class="section-title text-light col-md-12">
+        <h2 class="text-center">{{ .title | markdownify }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      {{ range .valeur_item }}
+      <div class="col-md-4 my-2text-left">
+        <div id="valeurs" class="border h-100 p-5 shadow">
+          <h4 class=" text-left text-uppercase">{{.title}}</h4>
+          <p class="">
+            {{ range .adjectives }}
+            <span class="">{{ .name | markdownify }}</span>
+            {{ end }}
+          </p>
+        </div>
+      </div>
+        {{ end }}
+
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.honoraires }}
+<section id="honoraires" class="bg-gray section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 section-title">
+        <h2>{{ .title | markdownify }}</h2>
+      </div>
+      <div class="col-md-8 ">
+<a href="/offre">Voir nos offres</a>      </div>
+    </div>
+</section>
+{{ end }}
+
+
+
+
+<section class="testimonial section-sm">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-10 offset-1 text-center">
+              <h2 class="mb-5">{{.Params.temoignages.temoignages_titre | markdownify}}</h2>
+              {{ range  where .Site.Pages "Section" "temoignages"}}
+  
+              {{ partial "partial_temoignages_carousel.html" . }}
+
+    
+          </div>
+          {{ end }}
+      </div>
+      <div class="row">
+  
+        
+        <div class="col-md-12 mt-5 text-center">
+            <p><a class="mt-3 link link-underline-primary " href="/temoignages">
+              Tous les témoignages</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{ end }}

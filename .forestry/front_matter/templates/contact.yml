@@ -1,0 +1,38 @@
+---
+label: Contact
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- name: meta_description
+  type: text
+  config:
+    required: false
+  label: SEO meta description
+- type: list
+  name: aliases
+  label: aliases
+- type: field_group_list
+  name: rdv_en_ligne
+  label: rdv_en_ligne
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: descr
+    label: descr
+  - type: text
+    name: link
+    label: link
+  - type: number
+    name: id
+    label: id
+    description: Ordre d'affichage
+pages:
+- content/french/contact/_index.md

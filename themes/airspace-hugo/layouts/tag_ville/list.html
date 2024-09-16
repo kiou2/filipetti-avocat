@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section id="2" class="section {{.Section}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="">
+      <h2>IF Avocats intervient dans les agglomérations suivantes : </h2>
+      {{ range .Pages }}
+			<h3 class=""><a title="{{ .Params.Ville }}" href="{{ .RelPermalink  }}">{{ .Params.Ville }}</a></h3>
+      {{ end }}
+        </div>
+			
+      </div>
+      <div class="col-md-4">
+        {{ partial "sp-sidebar.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

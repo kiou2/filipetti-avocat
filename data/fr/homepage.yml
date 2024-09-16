@@ -1,0 +1,92 @@
+---
+banner:
+  enable: true
+  bg_image: 
+  title: Cabinet d'avocats à Saint Laurent du Var 
+  content: 
+  button:
+    enable: false
+    label: Domaines d'intervention
+    link: competences/
+about:
+  enable: true
+  title: A propos
+  description: Des avocats expérimentés pour bénéficier d'une véritable expertise.
+  content: 
+     "En 2010, Isabelle FILIPETTI crée son cabinet en s’entourant d’une équipe dynamique partageant son niveau d’exigence. 
+     <br>Avec comme motivation première la réussite de tous les projets confiés à son cabinet, 
+     Isabelle FILIPETTI met à la disposition de ses clients toute sa compétence, sa rigueur, 
+     son écoute et sa polyvalence. 
+     <br>Le cabinet intervient pour conseiller, prévenir ou gérer un conflit, tant pour les particuliers que les entreprises, sociétés, PME, et salariés."
+  image: images/teams/avocat-isabelle-filipetti.jpg
+  button:
+    enable: true
+    label: "Notre cabinet"
+    link: "cabinet"
+
+######################### Portfolio / call to action grande banniere ###############################
+
+portfolio:
+  enable: true
+  bg_image: images/featue-bg.jpg
+  title: Offres d'emploi
+  content: "<b> Offre de collaboration libérale</b>\n\nNous recherchons un collaborateur (H/F) disposant d’une première 
+  expérience en cabinet dans un des domaines suivants : droit social, 
+  droit des contrats et rédaction de contrats, droit des affaires, droit commercial, 
+  droit de la propriété intellectuelle, NTIC.\n\n
+Une très bonne maîtrise de l’informatique est indispensable ainsi que des qualités rédactionnelles."
+  button:
+    enable: true
+    label: Postuler
+    link: contact
+service:
+  enable: false
+############################ call to action Contact  - impact sur toutes les pages ###########################
+
+cta:
+  enable: false
+  bg_image: images/call-to-action-bg.jpg
+  title: Envie d'en savoir plus ? 
+  content: Contactez-nous, nous examinerons ensemble votre dossier.<br>Consultation en ligne possible.
+  button:
+    enable: true
+    label: Contact
+    link: contact
+funfacts:
+  enable: false
+  title: Fun Facts About Us
+  description: "'Far far away, behind the word mountains, far from the countries Vokalia
+    and Consonantia, <br> there live the blind texts. Separated they live in Bookmarksgrove
+    right at the coast of the Semantics'"
+  funfact_item:
+  - icon: ion-ios-chatboxes-outline
+    name: Cups Of Coffee
+    count: "99"
+  - icon: ion-ios-glasses-outline
+    name: Article Written
+    count: "45"
+  - icon: ion-ios-compose-outline
+    name: Projects Completed
+    count: "125"
+  - icon: ion-ios-timer-outline
+    name: Combined Projects
+    count: "200"
+  testimonial_slider:
+  - name: Raymond Roy
+    image: images/clients/avater-1.jpg
+    designation: CEO-Themefisher
+    content: This Company created an e-commerce site with the tools to make our business
+      a success, with innovative ideas we feel that our site has unique elements that
+      make us stand out from the crowd.
+  - name: Randi Renin
+    image: images/clients/avater-1.jpg
+    designation: CEO-Themefisher
+    content: This Company created an e-commerce site with the tools to make our business
+      a success, with innovative ideas we feel that our site has unique elements that
+      make us stand out from the crowd.
+  - name: Rose Rio
+    image: images/clients/avater-3.jpg
+    designation: CEO-Themefisher
+    content: This Company created an e-commerce site with the tools to make our business
+      a success, with innovative ideas we feel that our site has unique elements that
+      make us stand out from the crowd.

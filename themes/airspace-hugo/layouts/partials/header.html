@@ -1,0 +1,84 @@
+{{ $url := .RelPermalink }}
+{{- $section := .Section }}
+<!-- Header Start -->
+<div class="" style="position: fixed; bottom:0; right:0; z-index:1000">
+    <div style="width: 200px;">
+      <div class="col-md-12 p-2" style="border-radius: 5px; background: #d7edea">
+        <b>CONTACTEZ-NOUS</b> 
+         <br><i class="ion-ios-telephone-outline"></i> <a href="tel:+33422132756">04 22 13 27 56</a>
+  </div>
+  </div>
+  </div>
+<header id="{{.Kind}}" class="navigation fixed-top">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- header Nav Start -->
+        <nav class="navbar navbar-expand-lg navbar-light ">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              {{ $thumb := resources.Get .Site.Params.logo -}}
+              {{ $image := $thumb.Resize "210x" }}
+            <a class="navbar-brand mr-auto" href="{{ .Site.BaseURL | relLangURL }}">
+              <img src="{{ $image.Permalink}}" alt="{{ .Site.Title }}" class="img-responsive">
+            </a>
+          </div>
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right ml-auto">
+              <!-- <li><a href="{{ .Site.BaseURL | absLangURL }}">{{ .Site.Params.home }}</a></li> -->
+              {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+              <li class="dropdown">
+                <a href="#" title="{{ .Title }}" class="menu {{ if eq $section .URL}} active {{end}}dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">{{ .Name }}</a>
+                <ul class="dropdown-menu">
+                  {{ range .Children }}
+                  {{- $url2 := .URL }}
+                  <a class="dropdown-item {{ if eq $url $url2  }}active{{ end }}" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                  {{ end }}
+                </ul>
+              </li>
+              {{ else }}
+              <li><a class="menu {{ if eq $section .URL}} active {{end}}" title="{{ .Title }}" href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+              {{ end }}
+              {{ end }}
+
+              <!-- Language List -->
+              {{- if .Site.IsMultiLingual }}
+              <li>
+                <select id="select-language" onchange="location = this.value;">
+                  {{ $siteLanguages := .Site.Languages}}
+                  {{ $pageLang := .Page.Lang}}
+                  {{ range .Page.AllTranslations }}
+                  {{ $translation := .}}
+                  {{ range $siteLanguages }}
+                  {{ if eq $translation.Lang .Lang }}
+                  {{ $selected := false }}
+                  {{ if eq $pageLang .Lang}}
+                  <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>
+                    {{ .LanguageName }}
+                  </option>
+                  {{ else }}
+                  <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}
+                  </option>
+                  {{ end }}
+                  {{ end }}
+                  {{ end }}
+                  {{ end }}
+                </select>
+              </li>
+              {{ end }}
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->

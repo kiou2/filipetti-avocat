@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section id="2" class="section {{.Section}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+		<div class="intro-ville my-3">
+    <p>{{ .Params.ville}} ({{  .Params.codepostal }}) est située dans les Alpes-Maritimes (06).</p>
+    <p>Sa population est de {{ .Params.population}} habitants.</p>
+
+  
+		</div>
+		<h2>Liste des tribunaux pour {{ .Params.ville}} </h2>
+    <ul>
+      <li>Tribunal d'Instance (TI) : {{.Params.ti }}</li>
+      <li>Tribunal de Grande Instance (TGI) : {{.Params.tgi }}</li>
+      <li>Tribunal de Commerce (TC) : {{.Params.tc }}</li>
+      <li>Conseil des Prud'Hommes (CPH) : {{.Params.cph }}</li>
+      <li>Cour d'Appel (CA) : {{.Params.courappel }}</li>
+    </ul>
+
+        <div class="">
+      <h2>Nos prestations juridiques à {{ .Params.ville}}</h2>
+      {{ $ici :=  .Params.ville}}
+      {{ range (where .Site.RegularPages.ByTitle "Section" "sp" ) }}
+      {{ if eq $ici .Params.tag_ville}}
+     <h3 class=""><a title="{{ .Title }}" href="{{ .RelPermalink  }}">{{ .Title }}</a></h3>
+  {{ end }}
+  {{ end }}
+        </div>
+			
+      </div>
+      <div class="col-md-4">
+        {{ partial "sp-sidebar.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

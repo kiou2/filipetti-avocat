@@ -1,0 +1,42 @@
+<aside class="sidebar">
+  <!-- Widget Latest Posts -->
+  <div class="widget widget-latest-post">
+    <h4 class="widget-title">Articles récents</h4>
+    {{ range first 4 (where .Site.Pages "Type" "post").ByDate.Reverse }}
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading"><a href="{{ .Permalink }}">> {{ .Title }}</a></h4>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  <!-- End Latest Posts -->
+
+  <!-- Widget Category -->
+  <div class="widget widget-category">
+    <h4 class="widget-title">Categories</h4>
+    {{- if isset .Site.Taxonomies "categories" }}
+    {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
+    <ul class="widget-category-list list-unstyled">
+      {{- range $name, $items := .Site.Taxonomies.categories }}
+      <li><a href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title | humanize }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div> <!-- End category  -->
+
+  <!-- Widget tag -->
+  <div class="widget widget-tag">
+    <h4 class="widget-title">Tags</h4>
+    {{- if isset .Site.Taxonomies "tags" }}
+    {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+    <ul class="widget-tag-list pl-0">
+      {{- range $name, $items := .Site.Taxonomies.tags }}
+      <li><a href="{{ `tags/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | humanize }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div> <!-- End tag  -->
+</aside>

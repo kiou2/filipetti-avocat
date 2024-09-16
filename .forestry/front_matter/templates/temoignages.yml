@@ -1,0 +1,34 @@
+---
+label: Temoignages
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- name: seo_meta_description
+  type: text
+  config:
+    required: false
+  label: SEO meta description
+  description: For le SEO uniquement
+- type: field_group_list
+  name: temoignages
+  label: temoignages
+  fields:
+  - type: text
+    name: nom
+    label: nom
+  - type: text
+    name: type
+    label: type
+  - type: text
+    name: temoignage
+    label: temoignage
+  - type: boolean
+    name: active
+    label: active
+pages:
+- content/french/temoignages/_index.md

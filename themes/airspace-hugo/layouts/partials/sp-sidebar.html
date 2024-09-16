@@ -1,0 +1,36 @@
+  <!-- Widget Category -->
+  <div class="widget widget-category">
+    <h4 class="widget-title">Villes</h4>
+    <div class="dropdown show">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sélectionnez votre ville
+      </a>
+    
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          {{ range (where .Site.RegularPages.ByTitle "Section" "tag_ville" ) }}
+
+        <a title="Avocat {{ .Params.ville | humanize }}" class="dropdown-item" href="{{ .RelPermalink  }}">{{ .Params.ville | humanize }}</a>
+        {{ end }}
+
+      </div>
+    </div>
+  </div> <!-- End category  -->
+
+  <!-- Widget tag -->
+  <!-- <div class="widget widget-tag">
+    <h4 class="widget-title">Expertises</h4>
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sélectionnez votre besoin
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            {{ range (where .Site.RegularPages.ByTitle "Section" "tag_competence" ) }}
+  
+          <a title="Avocat {{ .Title | humanize }}" class="dropdown-item" href="{{ .RelPermalink }}">{{ .Params.competence  | humanize }}</a>
+          {{ end }}
+  
+        </div>
+      </div>
+  </div> End tag  -->
+</aside>

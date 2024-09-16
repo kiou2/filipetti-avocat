@@ -1,0 +1,42 @@
+---
+label: Offre
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- type: textarea
+  name: meta_description
+  label: SEO meta description
+- type: text
+  name: intro_titre
+  label: Titre intro page
+- type: textarea
+  name: intro_texte
+  label: intro_texte
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: field_group_list
+  name: offres
+  label: offres
+  fields:
+  - type: text
+    name: pack
+    label: pack
+  - type: text
+    name: description
+    label: description
+- type: textarea
+  name: conditions
+  label: conditions
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+pages:
+- content/french/offre/_index.md

@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section id="2" class="section {{.Section}} ">
+  <div class="container">
+    <div class="row bg-white pb-md-5 px-md-5">
+        <div class="col-md-12 px-md-0 pt-md-5">
+            {{ partial "page-sidebar.html" . }}
+        </div>
+      <div class="col-lg-12 pt-5 text-justify">
+        {{ .Content }}
+      </div>
+      <div class="col-lg-12 pt-5">
+          <p><strong>> Un besoin en {{.Params.Title | lower }} ?</strong> <a href="/contact">Contactez-nous</a>, nous étudierons votre dossier.</p>
+        </div>
+    </div>
+  </div>
+</section>
+{{ end }}

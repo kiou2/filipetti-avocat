@@ -1,0 +1,51 @@
+---
+about:
+  enable: true
+  title: Compétences du cabinet
+  content: "Nos domaines d’intervention principaux sont le droit des nouvelles technologies,
+    le droit de la propriété intellectuelle et le droit du travail, tant en conseil
+    qu’en contentieux. \n\nLe cabinet intervient également en droit commercial et
+    droit de la consommation. Nous disposons d'une vision et approche transversale
+    de ces différents domaines pour renforcer nos conseils, affiner ensemble les stratégies
+    à adopter."
+  image: images/company/company-group-pic.jpg
+featured_service:
+  enable: false
+  service_item:
+  - name: sqdsq
+    icon: ddd
+    color: dd
+    content: sqdsqdq
+  - name: Interface Design
+    icon: ion-erlenmeyer-flask
+    color: primary
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe enim
+      impedit repudiandae omnis est temporibus.
+  - name: Product Branding
+    icon: ion-leaf
+    color: primary-dark
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe enim
+      impedit repudiandae omnis est temporibus.
+service:
+  enable: true
+  title: Compétences
+  description: Une vision et approche transversale pour renforcer nos conseils, affiner
+    ensemble les stratégies à adopter.
+  service_item:
+  - icon: ion-coffee
+    name: Droit social
+    content: Le Cabinet intervient dans toutes les étapes liées aux rapports individuels
+      et collectifs entre salariés et employeurs
+  - icon: ion-compass
+    name: NTIC
+    content: Problématiques liées au Nouvelles Technologies de l’Information et de
+      la Communication ainsi que le droit de la Consommation.
+  - icon: ion-image
+    name: Propriété intellectuelle
+    content: Le cabinet intervient en propriété industrielle, droits d’auteur et copyright
+  - icon: ion-bug
+    name: Droit des affaires
+    content: "Le cabinet intervient principalement en tant que conseil auprès des
+      entreprises\nen droit commercial et droit des sociétés "
+cta:
+  enable: true

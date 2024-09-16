@@ -1,0 +1,98 @@
+---
+label: Home page
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+  description: Grosse tagline sous le titre de la page
+- type: textarea
+  name: meta_description
+  label: meta_description
+  description: Pour le SEO
+  config:
+    wysiwyg: false
+- type: field_group
+  name: banner
+  label: banner
+  fields:
+  - type: file
+    name: bg_image
+    label: bg_image
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: description
+    label: description
+  - type: text
+    name: link_label
+    label: link_label
+- type: field_group
+  name: services
+  label: services
+  fields:
+  - type: textarea
+    name: services_title
+    label: services_title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+- type: field_group
+  name: about
+  label: about
+  fields:
+  - type: boolean
+    name: enable
+    label: enable
+  - type: text
+    name: about_title
+    label: about_title
+  - type: textarea
+    name: about_content
+    label: about_content
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: file
+    name: about_image
+    label: about_image
+  - type: text
+    name: about_link
+    label: about_link
+- type: field_group
+  name: temoignages
+  label: temoignages
+  fields:
+  - type: textarea
+    name: temoignages_titre
+    label: temoignages_titre
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: textarea
+    name: temoignages_texte
+    label: temoignages_texte
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: temoignages_lien
+    label: temoignages_lien
+- type: field_group
+  name: blog
+  label: blog
+  fields:
+  - type: text
+    name: blog_section_title
+    label: blog_section_title
+pages:
+- content/french/_index.md

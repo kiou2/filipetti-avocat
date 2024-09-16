@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{if .IsHome }}{{ with .Site.Title }}{{.}}{{end}}{{ else}} {{ .Title }} | {{ with .Site.Title }}{{.}}{{ end }}{{ end }}</title>
+<meta name="google-site-verification" content="QDfPlLC3WWDBf6SNnLXNiBM52m7SximxjBiYF9WAOWY" />
+  {{ "<!-- mobile responsive meta -->" | safeHTML }}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="{{ with .Params.meta_description }}{{ . }}{{ else}}{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ hugo.Generator }}
+
+  {{ "<!-- plugins -->" | safeHTML }}
+  {{ range .Site.Params.plugins.css }}
+  <link rel="stylesheet" href="{{ .link | absURL }}">
+  {{ end }}
+
+  {{ "<!-- Main Stylesheet -->" | safeHTML }}
+  {{ $styles := resources.Get "scss/style.scss" | toCSS | minify }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+  {{ "<!--Favicon-->" | safeHTML }}
+  <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+  <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+
+  <!-- scroll reveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+
+</head>

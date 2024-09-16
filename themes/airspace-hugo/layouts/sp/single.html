@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ $data := .Data }}
+
+<section class="page-wrapper mt-5 {{.Section}}">
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-9">
+				<div class="post post-single">
+					<h1 class="post-title">{{ .Title }}</h1>
+					<div class="post-content post-excerpt">
+						<p>Notre cabinet exerce dans le
+						<strong>{{ .Title }}</strong> à {{.Params.tag_ville}}.</p>
+					<p>Votre recherche sur <strong>{{ .Title }}</strong> relève du domaine d'expertise suivant: 
+						
+						<b>
+							{{$key := .Params.extertise_id }}
+							{{ range where $.Site.RegularPages "Section" "expertises" }}
+							{{ if eq .Params.id_expertise $key }}
+
+						<a href="{{ .Permalink | relURL}}" title="{{.Title}}">{{.Title}}</a>
+						{{ end }}
+						{{ end }}</b>.
+						<h3>Tous nos domaines d'expertise pour {{.Params.tag_ville}}</h3>
+
+						<ul>
+							{{ $tag_ville := .Params.tag_ville}}
+								{{ range sort (where .Site.RegularPages "Section" "expertises") "Weight" }}
+
+											  <li><a title="Avocat {{.Title }} {{$tag_ville}}" href="{{ .Permalink | relURL }}">{{ .Title | humanize }}</a></li>
+											  {{- end }}				
+
+					</ul>
+						<h3>Autres villes</h3>
+						IF Avocats peut également intervenir en {{.Params.tag_competence}} dans les villes suivantes.
+
+					<ul>
+          {{ range (where .Site.RegularPages.ByTitle "Section" "tag_ville" ) }}
+						<li><a title="{{.Title}}" href="{{ .Permalink | relURL }}">{{ .Params.ville | humanize }}</a></li>
+						{{- end }}
+					</ul>
+					</div>
+					</div>
+			</div>
+			<div class="col-md-3">
+				{{ partial "sp-sidebar.html" . }}
+			</div>
+		</div>
+	</div>
+</section>
+
+{{ end }}

@@ -1,0 +1,49 @@
+---
+label: Expertises
+hide_body: false
+display_field: title
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- name: meta_description
+  type: text
+  config:
+    required: false
+  label: SEO meta description
+- type: text
+  name: h3
+  label: Titre court
+  description: Utilisé dans le sous-menu
+- type: file
+  name: icon
+  label: icon
+- type: color
+  name: bgcolor
+  label: bgcolor
+  config:
+    color_format: RGB
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+  description: 'Change l''URL affichée dans le navigateur. '
+- type: number
+  name: weight
+  label: weight
+  hidden: true
+- type: list
+  name: aliases
+  label: aliases
+  description: Redirige les anciennes URL vers la nouvelle
+pages:
+- content/french/expertises/droit-commercial.md
+- content/french/expertises/droit-du-travail.md
+- content/french/expertises/droit-ntic.md
+- content/french/expertises/droit-propriete-intellectuelle.md
+- content/french/expertises/formations.md
+- content/french/expertises/mediation.md

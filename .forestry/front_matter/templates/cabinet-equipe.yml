@@ -1,0 +1,102 @@
+---
+label: Cabinet - equipe
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- type: textarea
+  name: meta_description
+  label: meta_description
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+- type: file
+  name: image
+  label: image
+  hidden: true
+- type: field_group_list
+  name: collaborateurs
+  label: collaborateurs
+  fields:
+  - type: text
+    name: nom
+    label: nom
+  - type: text
+    name: titre
+    label: titre
+  - type: textarea
+    name: bio
+    label: bio
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: textarea
+    name: devise
+    label: devise
+  - type: file
+    name: photo
+    label: photo
+- type: textarea
+  name: collaborateurs_suite
+  label: collaborateurs_suite
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: field_group
+  name: valeurs
+  label: valeurs
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: description
+    label: description
+  - type: boolean
+    name: enable
+    label: enable
+  - type: file
+    name: image_section
+    label: image_section
+  - type: field_group_list
+    name: valeur_item
+    label: valeur_item
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: field_group_list
+      name: adjectives
+      label: adjectives
+      fields:
+      - type: text
+        name: name
+        label: name
+- type: field_group
+  name: honoraires
+  label: honoraires
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: content
+    label: content
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+    hidden: true
+- type: list
+  name: aliases
+  label: aliases
+  description: Redirige les anciennes uRL vers la nouvelle
+pages:
+- content/french/cabinet/_index.md

@@ -1,0 +1,23 @@
+<div id="temoignages_carousel" class="carousel slide text-center" data-ride="carousel">
+    <div class="carousel-inner d-flex align-items-center">
+      {{ if .Params.temoignages}}
+      {{ range .Params.temoignages }}
+      <div class="carousel-item {{if .active}}active{{end}}">
+
+        <div class="col-md-8 offset-md-2">
+            <i class="ion-quote"></i>
+          <p class="">{{ .temoignage }}</p>
+          <p class="small"><b>{{ .nom }}</b> - {{ .type }} </p>
+        </div>
+
+      </div>
+      {{ end }}
+{{ end }}
+    </div>
+    <a class="carousel-control-prev" href="#temoignages_carousel" role="button " aria-label="button previous" data-slide="prev">
+        <i style="font-size: 40px;" class="ion-chevron-left text-black-50"></i>
+      </a>
+      <a class="carousel-control-next" href="#temoignages_carousel" role="button " aria-label="button next" data-slide="next">
+          <i style="font-size: 40px;" class="ion-chevron-right text-black-50"></i>
+      </a>
+  </div>

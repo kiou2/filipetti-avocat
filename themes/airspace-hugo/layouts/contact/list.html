@@ -1,0 +1,61 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section class="section">
+  <div class="container-fluid">
+    <div class="row d-flex flex-row-reverse mt-5">
+
+      <div class="col-md-6 h-100 px-5 mt-5">
+                 <h1 class="small text-uppercase">{{ .Title }}</h1>
+          <div class="section-title">   
+             <h2>{{ .Params.Description }}</h2>
+            </div>
+
+               <ul class="address-block  list-unstyled">
+                      <li>   <i class="ion-ios-location-outline"></i>{{ .Site.Params.location }}</li>
+                      <li><i class="ion-ios-email-outline"></i> {{ .Site.Params.email }}</li>
+                      <li><i class="ion-ios-telephone-outline"></i> T :  {{ .Site.Params.phone }}</li>
+                      <li><i class="ion-ios-telephone-outline"></i> M :  {{ .Site.Params.mobile }}</li>
+                      <li><i class="ion-ios-telephone-outline"></i> F :  {{ .Site.Params.fax }}</li>
+                       {{ range .Site.Params.social }}
+                      <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+                      {{ end }}
+                      </ul>
+
+                      <div id="" class="mt-5">
+                        <h3>Consultations en ligne</h3>
+                        {{ range .Params.rdv_en_ligne}}
+                          <div class="card my-2">
+                            <div class="" id="{{ .id | urlize}}">
+                              <h5 class="mb-0">
+                                <a  class="btn btn-link" data-toggle="collapse" href="#{{ .title | urlize}}" aria-controls="{{ .title | urlize}}">
+                                    <i class="icon ion-chevron-right"></i> {{ .title }} 
+                                </a> 
+                              </h5>
+                            </div>
+                        
+                            <div id="{{ .title | urlize}}" class="collapse">
+                              <div class="card-body small">
+                                  {{ .descr | markdownify}}
+                                  <a class=" d-block w-25 link link-underline-primary" href="{{ .link |safeHTML}}" target="blank" >{{ .title}}</a>
+                              </div>
+                            </div>
+                          </div>
+                          {{ end }}
+                        </div>
+        </div>
+        <div class="col-md-6 h-100 px-0">
+          {{ if .Site.Params.gmap.enable }}
+            <div class="block">
+              <div class="google-map h-100">
+                <div class="map" style="height: 100vh" id="map_canvas" data-latitude="{{ .Site.Params.gmap.map_latitude }}" data-longitude="{{ .Site.Params.gmap.map_longitude }}" data-marker="{{ .Site.Params.gmap.map_marker | relURL }}" data-marker-name="{{ .Site.Title }}"></div>
+              </div>
+            </div>
+          {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
