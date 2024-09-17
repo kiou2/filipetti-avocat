@@ -1,4 +1,4 @@
-baseURL =  "https://filipettiavocat.netlify.app/" 
+baseURL =  "https://fizzbuzz-demo.netlify.app/" 
 removePathAccents = true
 defaultContentLanguage = "fr"
 disableLanguages = "en"
