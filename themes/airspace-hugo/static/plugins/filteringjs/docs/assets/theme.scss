@@ -1,0 +1,166 @@
+---
+---
+
+$base-color: #c6538c;
+$font-color: #212121;
+$link-color: #0969da;
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $link-color;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: $link-color;
+  }
+}
+
+hr {
+  height: 0.1em;
+  padding: 0;
+  margin: 40px 0;
+  background-color: lightgrey;
+  border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.gap {
+  gap: 24px;
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.hidden {
+  display: none;
+}
+
+.site-header,
+.site-footer {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: $font-color;
+  color: white;
+
+  .site-title,
+  .footer-heading {
+    color: white;
+  }
+
+  @media screen and (min-width: 600px) {
+    .site-nav {
+      .page-link {
+        color: white;
+      }
+    }
+  }
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.page-heading,
+.post-header {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .wrapper {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    max-width: 1024px;
+  }
+}
+
+.js-tabs__title-active {
+  border-radius: 0;
+}
+
+.js-tabs__content {
+  padding: 0;
+}
+
+.highlight {
+  margin-bottom: 0;
+}
+
+.info-box {
+  position: relative;
+  padding: 16px 36px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: rgba(173, 216, 230, 0.63);
+}
+
+.info-box:before {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  margin-left: -26px;
+  margin-top: -12px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\f05a";
+  clear: both;
+}
+
+.info-box > *:last-child {
+  margin-bottom: 0;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+table tr:nth-child(even) {
+  background-color: #f7f7f7;
+}

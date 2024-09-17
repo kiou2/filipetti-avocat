@@ -1,0 +1,385 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section class="section portfolio-work {{.Section}} ">
+    <div class="container">
+        <main id="swup" class="transition-main">
+
+            <section id="home-section" class="loaded">
+                <div id="home-images">
+                    <div class="home-image empty" style="z-index: 0; visibility: hidden; transform: scale3d(1, 1, 1);">
+                    </div>
+                    <div class="home-image image-1">
+                        <figure data-orientation="landscape" style="aspect-ratio:2000 / 1500">
+                            <img width="2000" height="1500" alt="" class=""
+                                src="https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-2000x.webp"
+                                srcset="https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x320-q80.webp 320w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x640-q80.webp 640w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x960-q80.webp 960w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x960-q80.webp 1280w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x1200-q80.webp 1600w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x1365-q80.webp 1920w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x1680-q80.webp 2240w">
+                        </figure>
+                    </div>
+                    <div class="home-image image-2">
+                        <figure data-orientation="landscape" style="aspect-ratio:2000 / 1335">
+                            <img width="2000" height="1335" alt="" class=""
+                                src="https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-2000x.webp"
+                                srcset="https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-x320-q80.webp 320w, https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-x640-q80.webp 640w, https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-x960-q80.webp 960w, https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-x960-q80.webp 1280w, https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-x1200-q80.webp 1600w, https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-x1365-q80.webp 1920w, https://piloteparis.com/media/pages/home/5bcb5d2082-1704216941/pilote-paris-ensad-x1680-q80.webp 2240w">
+                        </figure>
+                    </div>
+                    <div class="home-image image-3">
+                        <figure data-orientation="landscape" style="aspect-ratio:2000 / 1500">
+                            <img width="2000" height="1500" alt="" class=""
+                                src="https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-2000x.webp"
+                                srcset="https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-x320-q80.webp 320w, https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-x640-q80.webp 640w, https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-x960-q80.webp 960w, https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-x960-q80.webp 1280w, https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-x1200-q80.webp 1600w, https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-x1365-q80.webp 1920w, https://piloteparis.com/media/pages/home/2ef54665a6-1704299867/rn13bis-05-x1680-q80.webp 2240w">
+                        </figure>
+                    </div>
+                    <div class="home-image image-4">
+                        <figure data-orientation="portrait" style="aspect-ratio:1600 / 2000">
+                            <img width="1600" height="2000" alt="" class=""
+                                src="https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-2000x.webp"
+                                srcset="https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-x320-q80.webp 320w, https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-x640-q80.webp 640w, https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-x960-q80.webp 960w, https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-x960-q80.webp 1280w, https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-x1200-q80.webp 1600w, https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-x1365-q80.webp 1920w, https://piloteparis.com/media/pages/home/af27c2bdb7-1704361580/bofill-04-x1680-q80.webp 2240w">
+                        </figure>
+                    </div>
+                    <div class="home-image image-5">
+                        <figure data-orientation="landscape" style="aspect-ratio:2000 / 1096">
+                            <img width="2000" height="1096" alt="" class=""
+                                src="https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-2000x.webp"
+                                srcset="https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-x320-q80.webp 320w, https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-x640-q80.webp 640w, https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-x960-q80.webp 960w, https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-x960-q80.webp 1280w, https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-x1200-q80.webp 1600w, https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-x1365-q80.webp 1920w, https://piloteparis.com/media/pages/home/ef7c264989-1659276244/pilote-paris-bureau-01-x1680-q80.webp 2240w">
+                        </figure>
+                    </div>
+
+                    <div class="home-image empty"></div>
+                    <div class="home-image image-1cloned">
+                        <figure data-orientation="landscape" style="aspect-ratio:2000 / 1500">
+                            <img width="1600" height="2000" alt="" class=""
+                                src="https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-2000x.webp"
+                                srcset="https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x320-q80.webp 320w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x640-q80.webp 640w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x960-q80.webp 960w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x960-q80.webp 1280w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x1200-q80.webp 1600w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x1365-q80.webp 1920w, https://piloteparis.com/media/pages/home/de242fb51e-1704218265/mou-01-x1680-q80.webp 2240w">
+                        </figure>
+                    </div>
+                </div>
+                <div id="home-message">
+                    <span>SCROLL</span>
+                </div>
+                <div id="scrollbar" style="height: 14.9344px; transform: translate(0px, 16.428px);"></div>
+                <div id="home-intro" style="opacity: 0; display: none;">
+                    <div id="load-text">100/100</div>
+                </div>
+            </section>
+
+
+
+
+            <script type="module">
+                import Swup from 'https://unpkg.com/swup@4?module';
+                import SwupScrollPlugin from '/@swup/scroll-plugin';
+
+                        const swup = new Swup({
+                            plugins: [new SwupScrollPlugin()]
+
+                        });
+            </script>
+
+            <script>
+                let scroll = 0;
+                let scale = 0;
+                let inView = 2
+                let homeSection = document.getElementById('home-section')
+                let homeImages = document.querySelectorAll('.home-image');
+                let scrollbar = document.getElementById('scrollbar')
+                let homeMessage = document.getElementById('home-message')
+
+                //homeSection.style.pointerEvents = "none";
+
+                homeImages.forEach((img, i) => {
+                    //homeImages[i].parentNode.style.visibility = "hidden";
+                    homeImages[i].style.zIndex = (-i);
+                });
+
+
+                function scrollbarset() {
+                    scrollheight = window.innerHeight / (homeImages.length - 1)
+                    scrollbar.style.height = scrollheight + 'px';
+                }
+                scrollbarset();
+
+                //Touch//
+                function isTouchDevice() {
+                    return (
+                        !!(typeof window !== 'undefined' &&
+                            ('ontouchstart' in window ||
+                                (window.DocumentTouch &&
+                                    typeof document !== 'undefined' &&
+                                    document instanceof window.DocumentTouch))) ||
+                        !!(typeof navigator !== 'undefined' &&
+                            (navigator.maxTouchPoints || navigator.msMaxTouchPoints))
+                    );
+                }
+
+                const touch = isTouchDevice();
+
+                var html = document.querySelectorAll('html')[0];
+                if (isTouchDevice() == true) {
+                    html.classList.add("touch");
+                } else {
+                    html.classList.add("notouch");
+                }
+
+                if (isTouchDevice() == true) {
+                    touchHome();
+                } else {
+                    scrollHome();
+                }
+
+
+                function scrollHome() {
+                    homeSection.addEventListener('wheel', (e) => {
+                        //e.preventDefault();
+                        scroll += e.deltaY * 0.0001;
+                        console.log('wheel scroll ' + scroll);
+                        if (e.deltaY >= 1 || e.deltaY <= -1) {
+                            hideMessage();
+                        }
+                    }, {
+                        passive: true
+                    })
+                }
+
+
+                function touchHome() {
+                    var offset, reference, pressed,
+                        velocity, frame, timestamp, ticker,
+                        amplitude, timeConstant;
+
+                    function ypos(e) {
+                        // touch event
+                        if (e.targetTouches && (e.targetTouches.length >= 1)) {
+                            return e.targetTouches[0].clientY;
+                        }
+                        // mouse event
+                        return e.clientY;
+                    }
+
+                    function touchScroll(y) {
+                        offset = y
+                        scroll += y * 0.0005
+                        //console.log(offset)
+                    }
+
+                    function track() {
+                        var now, elapsed, delta, v;
+
+                        now = Date.now();
+                        elapsed = now - timestamp;
+                        timestamp = now;
+                        delta = offset - frame;
+                        frame = offset;
+
+                        v = 1000 * delta / (1 + elapsed);
+                        velocity = 0.8 * v + 0.2 * velocity;
+                    }
+
+                    function autotouchScroll() {
+                        var elapsed, delta;
+
+                        if (amplitude) {
+                            elapsed = Date.now() - timestamp;
+                            delta = amplitude * Math.exp(-elapsed / timeConstant);
+                            if (delta > 0.5 || delta < -0.5) {
+                                touchScroll(delta);
+                                //console.log('autoscroll')
+                                requestAnimationFrame(autotouchScroll);
+                            } else {
+                                touchScroll(0);
+                                //console.log('autoscrollend')
+                            }
+                        }
+                    }
+
+                    function tap(e) {
+                        pressed = true;
+                        reference = ypos(e);
+
+                        velocity = amplitude = 0;
+                        frame = offset;
+                        timestamp = Date.now();
+                        clearInterval(ticker);
+                        ticker = setInterval(track, 100);
+
+                        //e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                    }
+
+                    function drag(e) {
+                        var y, delta;
+                        if (pressed) {
+                            y = ypos(e);
+                            delta = reference - y;
+                            if (delta > 2 || delta < -2) {
+                                hideMessage();
+                                reference = y;
+                                touchScroll(delta);
+                                //console.log('touchscroll')
+                            }
+                        }
+
+                        //e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                    }
+
+                    function release(e) {
+                        pressed = false;
+
+                        clearInterval(ticker);
+                        if (velocity > 2 || velocity < -2) {
+                            amplitude = 0.2 * velocity;
+                            timestamp = Date.now();
+                            requestAnimationFrame(autotouchScroll);
+                        }
+
+                        //e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                    }
+
+                    if (typeof window.ontouchstart !== 'undefined') {
+                        homeSection.addEventListener('touchstart', tap, {
+                            passive: true
+                        });
+                        homeSection.addEventListener('touchmove', drag, {
+                            passive: true
+                        });
+                        homeSection.addEventListener('touchend', release, {
+                            passive: true
+                        });
+                    }
+                    homeSection.addEventListener('mousedown', tap, {
+                        passive: true
+                    });
+                    homeSection.addEventListener('mousemove', drag, {
+                        passive: true
+                    });
+                    homeSection.addEventListener('mouseup', release, {
+                        passive: true
+                    });
+
+                    pressed = false;
+                    timeConstant = 325; // ms
+
+                };
+
+
+
+                function zoom() {
+
+                    // Restrict scale
+                    scale = Math.min(Math.max(0, scale), homeImages.length - inView);
+                    if (scale >= homeImages.length - inView) {
+                        scale = 0.00001;
+                    }
+                    if (scale <= 0) {
+                        scale = homeImages.length - inView
+                    }
+
+                    scale += scroll;
+                    scroll *= 0.8;
+
+                    homeImages.forEach((o, i) => {
+
+                        o.dist = Math.min((scale - i - 1) / inView, 3)
+
+                        if (o.dist <= 0 && o.dist >= -2) {
+                            homeImages[i].style.visibility = "visible"
+                            o.dist = Math.abs(o.dist)
+                            transformValue = 'scale3D(' + o.dist + ', ' + o.dist + ', 1)';
+                            homeImages[i].style.WebkitTransform = transformValue;
+                            homeImages[i].style.MozTransform = transformValue;
+                            homeImages[i].style.OTransform = transformValue;
+                            homeImages[i].style.transform = transformValue;
+                            //homeImages[i].style.transform = `scale(${o.dist})`
+                        } else {
+                            homeImages[i].style.visibility = "hidden";
+                            transformValue = 'scale3D(1, 1, 1)';
+                            homeImages[i].style.WebkitTransform = transformValue;
+                            homeImages[i].style.MozTransform = transformValue;
+                            homeImages[i].style.OTransform = transformValue;
+                            homeImages[i].style.transform = transformValue;
+                        }
+
+
+                    })
+
+                    scrollscale = scale * scrollheight
+                    scrollbar.style.transform = `translate(0,${scrollscale}px)`
+                    window.requestAnimationFrame(zoom)
+                }
+                zoom();
+
+
+                var hideMessage = (function () {
+                    var executed = false;
+                    return function () {
+                        if (!executed) {
+                            executed = true;
+                            homeMessage.style.transform = "translate(0, 0)";
+                        }
+                    };
+                })();
+
+
+                /*let link = document.querySelector(".link")
+                link.addEventListener('click', (e)=>{
+                    document.body.classList.toggle("homepage");
+                    document.body.classList.toggle("panel");
+                });*/
+
+
+                var homeload = function () {
+                    function id(v) {
+                        return document.getElementById(v);
+                    }
+
+                    function loadbar() {
+                        var ovrl = id("home-intro"),
+                            //prog = id("progress"),
+                            stat = id("load-text"),
+                            img = document.querySelectorAll('#home-section img'),
+                            c = 0,
+                            tot = img.length;
+                        if (tot == 0) return doneLoading();
+
+                        function imgLoaded() {
+                            c += 1;
+                            var perc = (100 / tot * c) << 0;
+                            //prog.style.width = perc;
+                            var newPerc = new Intl.NumberFormat("en", {
+                                minimumIntegerDigits: 3
+                            }).format(perc);
+                            stat.innerHTML = newPerc + "/100";
+                            if (c === tot) return doneLoading();
+                        }
+
+                        function doneLoading() {
+                            ovrl.style.opacity = 0;
+                            setTimeout(function () {
+                                ovrl.style.display = "none";
+                            }, 1200);
+                            homeSection.classList.add("loaded");
+                        }
+                        for (var i = 0; i < tot; i++) {
+                            var tImg = new Image();
+                            tImg.onload = imgLoaded;
+                            tImg.onerror = imgLoaded;
+                            tImg.srcset = img[i].srcset;
+                        }
+                    }
+                    document.addEventListener('DOMContentLoaded', loadbar, false);
+                };
+                homeload();
+            </script>
+        </main>
+    </div>
+</section>
+
+{{ end }}

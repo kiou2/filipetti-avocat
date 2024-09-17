@@ -1,0 +1,184 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section class="section portfolio-work {{.Section}} ">
+        <div class="container">
+            <div id="root">
+                <div>
+                    <div class="filtering-group" data-group-name="color">
+                        <div class="filtering-filter" data-filter-name="red">Red <span class="total"></span></div>
+                        <div class="filtering-filter" data-filter-name="green">Green <span class="total"></span></div>
+                        <div class="filtering-filter" data-filter-name="blue">Blue <span class="total"></span></div>
+
+                    </div>
+                    <div class="filtering-group" data-group-name="size">
+                        <div class="filtering-filter" data-filter-name="small">Small <span class="total"></span></div>
+                        <div class="filtering-filter" data-filter-name="large">Large <span class="total"></span></div>
+
+                    </div>
+                </div>
+            
+                <div id="items">
+                    <div class="filtering-item red" data-filter-color="red" data-filter-size="small"></div>
+                    <div class="filtering-item blue" data-filter-color="blue" data-filter-size="large"></div>
+                    <div class="filtering-item red" data-filter-color="red" data-filter-size="large"></div>
+                    <div class="filtering-item red" data-filter-color="red" data-filter-size="small"></div>
+                    <div class="filtering-item green" data-filter-color="green" data-filter-size="small"></div>
+                </div>
+            </div>
+
+
+            <script src="/plugins/filteringjs/dist/umd/index.ui.js"></script>
+            <script>
+const {FilteringFlow} = filteringjs;
+
+class MyFlow extends FilteringFlow {
+    handleFilterResult(result) {
+        super.handleFilterResult(result);
+        for (const group of result.groups) {
+            for (const filter of group.filters) {
+                const filterElement = filter.schemaFilter.data.element;
+                // Update the number next to the filter to indicate how many items are or would be filtered
+                filterElement.querySelector('.total').innerText = `(${filter.possibleItems.length})`;
+            }
+        }
+    }
+}
+new MyFlow(document.querySelector('#root'));
+            </script>
+
+            
+<style>
+ #root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #filtering {
+            display: flex;
+            justify-content: center;
+            user-select: none;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .filtering-group {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid lightgray;
+            border-radius: 6px;
+        }
+
+        .filtering-group-header {
+            align-self: flex-start;
+            background-color: white;
+            color: lightgray;
+            font-size: 15px;
+            margin-top: -10px;
+            margin-left: 8px;
+        }
+
+        .filtering-filter {
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 3px 12px;
+        }
+
+        .filtering-filter:hover {
+            background-color: #eeeeee;
+        }
+
+        .filtering-filter.enabled {
+            font-weight: bold;
+            background-color: #ccf9ff;
+        }
+
+        .filtering-filter.disabled {
+            color: grey;
+        }
+
+        .filtering-filter.disabled:hover {
+            background-color: transparent;
+        }
+
+        .total {
+            min-width: 64px;
+            text-align: right;
+        }
+
+        #items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 0 12px;
+        }
+
+        .filtering-item {
+            width: 64px;
+            height: 64px;
+            border: 1px solid grey;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .filtering-item[data-filter-size="xs"] {
+            width: 24px;
+            height: 24px;
+        }
+
+        .filtering-item[data-filter-size="small"] {
+            width: 48px;
+            height: 48px;
+        }
+
+        .filtering-item[data-filter-size="medium"] {
+            width: 64px;
+            height: 64px;
+        }
+
+        .filtering-item[data-filter-size="large"] {
+            width: 80px;
+            height: 80px;
+        }
+
+        .filtering-item[data-filter-size="xl"] {
+            width: 96px;
+            height: 96px;
+        }
+
+        .filtering-item.filtered {
+          width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border-width: 0 !important;
+    opacity: 0;
+        }
+
+        .red {
+          background-color: red;
+        }
+        .blue {
+          background-color: blue;
+        }
+        .green {
+          background-color: green;
+        }
+</style>
+
+</div>
+</section>
+
+{{ end }}

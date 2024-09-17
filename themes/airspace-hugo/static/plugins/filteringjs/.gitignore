@@ -1,0 +1,14 @@
+node_modules
+
+docs/Gemfile.lock
+docs/_site/
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+.idea

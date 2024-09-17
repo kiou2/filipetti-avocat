@@ -1,0 +1,26 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Explicitly declare text files you want to always be normalized and converted to native line endings on checkout.
+*.js   text
+*.ts   text
+*.html text
+*.json text
+*.xml  text
+*.txt  text
+*.md   text
+
+# Denote all files that are truly binary and should not be modified.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+
+# Manually declare special files
+*.map             binary
+
+/dist/**/*               binary
+/docs/assets/index.ui.js binary
+package-lock.json        binary
+
+# For more info see https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings

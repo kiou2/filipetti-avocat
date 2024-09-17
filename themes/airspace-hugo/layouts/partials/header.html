@@ -1,14 +1,6 @@
 {{ $url := .RelPermalink }}
 {{- $section := .Section }}
 <!-- Header Start -->
-<div class="" style="position: fixed; bottom:0; right:0; z-index:1000">
-    <div style="width: 200px;">
-      <div class="col-md-12 p-2" style="border-radius: 5px; background: #d7edea">
-        <b>CONTACTEZ-NOUS</b> 
-         <br><i class="ion-ios-telephone-outline"></i> <a href="tel:+33422132756">04 22 13 27 56</a>
-  </div>
-  </div>
-  </div>
 <header id="{{.Kind}}" class="navigation fixed-top">
 
   <div class="container">
@@ -21,8 +13,8 @@
           <div class="navbar-header">
               {{ $thumb := resources.Get .Site.Params.logo -}}
               {{ $image := $thumb.Resize "210x" }}
-            <a class="navbar-brand mr-auto" href="{{ .Site.BaseURL | relLangURL }}">
-              <img src="{{ $image.Permalink}}" alt="{{ .Site.Title }}" class="img-responsive">
+            <a class="navbar-brand mr-auto mt-3" href="{{ .Site.BaseURL | relLangURL }}">
+              FIZZBUZZ DEMO SITE
             </a>
           </div>
           <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">

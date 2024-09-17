@@ -1,33 +1,7 @@
-{{ partial "cta.html" .}}
 <footer class="footer ">
 	<div class="container">
 		<div class="row footer-manu">
-			<div class="col-md-4">
-				<img  alt="{{ .Site.Title }}" style="max-width: 200px" class="img-fluid" src="{{.Site.Params.logo | relURL}}">
-				<p class="text-justify">Nous intervenons dans le droit du travail et le droit de la propriété intellectuelle, avec un accent particulier dans le digital et les nouvelles technologies. </p>
-				<p>Le Cabinet est compétent à <a href="{{ with $.Site.GetPage "tag_ville/nice.md" }}{{ .RelPermalink }}{{ end }}"> Nice</a>, <a href="{{ with $.Site.GetPage "tag_ville/grasse.md" }}{{ .RelPermalink }}{{ end }}"> Grasse</a>, <a href="{{ with $.Site.GetPage "tag_ville/cannes.md" }}{{ .RelPermalink }}{{ end }}"> Cannes</a>, <a href="{{ with $.Site.GetPage "tag_ville/antibes.md" }}{{ .RelPermalink }}{{ end }}"> Antibes</a>, ainsi que dans <a href="{{ with $.Site.GetPage "tag_ville/_index.md" }}{{ .RelPermalink }}{{ end }}"> toutes les communes</a> du 06.</p>
-			</div>
-				<div class="col-md-3 ml-auto">
-						<p class="lead font-weight-bold">Cabinet</p>
-						<ul>
-						{{ range .Site.Menus.footer1 }}
-						<li><a href="{{ .URL | absURL}}">{{ .Name }}</a></li>
-						{{ end }}
-						</ul>
-						{{ range .Site.Params.social }}
-						<ul class="">
-						<li><a title="{{.name}}" href="{{ .link | safeURL }}"><i class="{{ .icon }} lead"></i></a></li>
-						{{ end }}
-					</ul>
-						</div>
-			<div class="col-md-3">
-					<p class="lead font-weight-bold">Expertises</p>
-				<ul>
-				{{ range .Site.Menus.footer2 }}
-				<li><a href="{{ .URL | absURL}}">{{ .Name }}</a></li>
-				{{ end }}
-				</ul>
-				</div>
+			
 		</div>
 		<div class="row">
 			<div class="col-md-6">
@@ -61,6 +35,7 @@
   gtag('js', new Date());
   gtag('config', '{{ . }}');
 </script>
+
 
 {{ end }}
 

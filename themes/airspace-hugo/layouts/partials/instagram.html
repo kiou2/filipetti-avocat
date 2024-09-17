@@ -1,0 +1,17 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.homepage.cta }}
+<section class="call-to-action bg-1 section-sm overly">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="instagram-feed"></div>
+
+
+      </div>
+      <!--col -->
+    </div>
+    <!--row -->
+  </div>
+  <!--container -->
+</section>
+{{ end }}

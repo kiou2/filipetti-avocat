@@ -1,5 +1,4 @@
-baseURL =  "https://filipetti-avocat.com/" 
-#"https://peaceful-bhabha-787d37.netlify.com/"
+baseURL =  "https://filipettiavocat.netlify.app/" 
 removePathAccents = true
 defaultContentLanguage = "fr"
 disableLanguages = "en"
@@ -7,11 +6,11 @@ disqusShortname = ""
 paginate = "4"
 summaryLength = "30"
 theme = "airspace-hugo"
-title = "Cabinet d'Avocats Isabelle Filipetti - AXE AVOCATS"
+title = "Site de demo Fizzbuzz"
 [markup.goldmark.renderer]
 unsafe= true
 [Languages.en]
-contentDir = "content/english"
+contentDir = "content/french"
 copyright = "Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights Reserved"
 home = "Home"
 languageCode = "en-us"
@@ -19,7 +18,7 @@ languageName = "En"
 weight = 2
 [Languages.fr]
 contentDir = "content/french"
-copyright = "© Isabelle Filipetti 2024."
+copyright = "© Fizzbuzz 2024."
 home = "Accueil"
 languageCode = "fr-fr"
 languageName = "Fr"
@@ -29,15 +28,10 @@ URL = "contact"
 name = "Contact"
 weight = 3
 
-[[menu.main]]
-URL = "expertises"
-hasChildren = true
-name = "Expertises"
-weight = 2
 [params]
 author = "Agence Fizzbuzz"
 contact_form_action = "#"
-description = "Avocat à Saint Laurent du Var"
+description = "Site de demo Fizzbuzz"
 email = "cab@filipetti-avocat.com"
 fax = "04 93 19 30 23"
 google_analitycs_id = "UA-4101235-3"
@@ -77,6 +71,10 @@ link = "plugins/bootstrap/bootstrap.min.js"
 link = "plugins/shuffle/shuffle.min.js"
 [[params.plugins.js]]
 link = "plugins/google-map/gmap.js"
+[[params.plugins.js]]
+# link = "plugins/instafeed/instafeed.js"
+[[params.plugins.js]]
+# link = "plugins/swup/dist/Swup.umd.js"
 [params.preloader]
 enable = false
 preloader = ""

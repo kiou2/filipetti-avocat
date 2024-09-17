@@ -1,0 +1,116 @@
+<div class="demo example"></div>
+
+<script>
+    (function () {
+        const randomElement = (array) => array[Math.floor(Math.random() * array.length)];
+
+        const groups = {
+            color: [
+                {name: 'red', value: '#EF5350'},
+                {name: 'blue', value: '#42A5F5'},
+                {name: 'green', value: '#9CCC65'},
+                {name: 'yellow', value: '#FFEE58'},
+                {name: 'cyan', value: '#26C6DA'},
+                {name: 'purple', value: '#AB47BC'},
+            ],
+            icon: [
+                'envelope',
+                'ghost',
+                'heart',
+                'house',
+                'plane',
+                'star',
+                'user',
+            ],
+            size: [
+                'small',
+                'medium',
+                'large',
+                'huge',
+            ],
+            'border-width': [
+                '0px',
+                '2.5px',
+                '5px',
+                '7.5px',
+            ],
+        };
+
+        const container = document.querySelector('.demo');
+        const root = document.createElement('div');
+        const groupsElement = document.createElement('div');
+        groupsElement.classList.add('flex', 'stretch', 'wrap');
+        for (let [groupName, filterNames] of Object.entries(groups)) {
+            const groupElement = document.createElement('div');
+            groupElement.classList.add('filtering-group', 'mx-2');
+            groupElement.dataset.groupName = groupName;
+
+            for (let filterName of filterNames) {
+                if (typeof filterName === 'object') {
+                    filterName = filterName.name;
+                }
+
+                const filterElement = document.createElement('div');
+                filterElement.classList.add('filtering-filter');
+
+                filterElement.dataset.filterName = filterName;
+                filterElement.innerText = filterName;
+
+                const totalElement = document.createElement('span');
+                totalElement.classList.add('total');
+
+                filterElement.appendChild(totalElement);
+                groupElement.appendChild(filterElement);
+            }
+            groupsElement.appendChild(groupElement);
+        }
+        root.appendChild(groupsElement);
+
+        const itemsElement = document.createElement('div');
+        itemsElement.classList.add('filtering-items', 'flex');
+        for (let i = 0; i < 128; i++) {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('filtering-item');
+
+            const icon = randomElement(groups.icon);
+            const color = randomElement(groups.color);
+            const size = randomElement(groups.size);
+            const borderWidth = randomElement(groups['border-width']);
+
+            itemElement.dataset.filterIcon = icon;
+            itemElement.dataset.filterColor = color.name;
+            itemElement.dataset.filterSize = size;
+            itemElement.dataset.filterBorderWidth = borderWidth;
+
+            itemElement.innerHTML = `<i class="fa-solid fa-${icon}"></i>`;
+            itemElement.style.fontSize = '24px';
+            itemElement.style.color = 'rgba(0,0,0,0.32)';
+            itemElement.style.backgroundColor = color.value;
+            itemElement.style.width = size;
+            itemElement.style.height = size;
+            itemElement.style.borderWidth = borderWidth;
+
+            itemsElement.appendChild(itemElement);
+        }
+        root.appendChild(itemsElement);
+        container.appendChild(root);
+
+        const {FilteringFlow} = filteringjs;
+
+        class MyFlow extends FilteringFlow {
+            handleFilterResult(result) {
+                super.handleFilterResult(result);
+                for (const group of result.groups) {
+                    for (const filter of group.filters) {
+                        const filterElement = filter.schemaFilter.data.element;
+                        // Update the number next to the filter to indicate how many items are or would be filtered
+                        filterElement.querySelector('.total').innerText = `(${filter.possibleItems.length})`;
+                    }
+                }
+            }
+        }
+
+        new MyFlow(root);
+
+    })();
+</script>
